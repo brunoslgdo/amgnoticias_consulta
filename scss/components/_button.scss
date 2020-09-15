@@ -1,0 +1,46 @@
+// reset 
+    
+    a.button {
+        text-decoration: none;
+        display: inline-block;
+    }
+
+// styles
+
+    .button {
+
+        border-style: solid;
+        border-radius: 3.2rem;
+        border-width: 0.1rem;
+        
+        font-size: 1.2rem;
+        
+        padding: 0.8rem 2.4rem;
+
+        transition: background-color 0.3s ease,
+                    color 0.3s ease,
+                    padding 0.1s ease;
+
+        &:hover {
+            border-color: var(--second-color);
+            color: var(--second-color);
+        }
+
+        &:active {
+            padding: 0.6rem 2.2rem;
+        }
+
+        &--ghost-third-color {
+            border-color: var(--third-color);
+            color: var(--third-color);
+        }
+    }
+
+// vertical centering
+    
+    .button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 2.4rem;
+    }

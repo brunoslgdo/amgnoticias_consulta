@@ -1,0 +1,16 @@
+$colors: (
+
+    first-color:#0C2E56,
+    first-color-alt: #10A3EB,
+    second-color: #A4D411,
+    third-color: #9c9c9c
+
+);
+
+:root {
+
+    @each $colorsName, $colorsValue in $colors {
+        --#{$colorsName}: #{$colorsValue};
+    }
+
+}

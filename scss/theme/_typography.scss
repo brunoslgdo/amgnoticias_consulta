@@ -1,0 +1,15 @@
+.title,
+.subtitle {
+    color: var(--first-color-alt);
+    text-shadow: 0 0.1rem rgba(0,0,0,0.2);
+}
+
+.title {
+    font-size: 3.2rem;
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 2rem;
+}

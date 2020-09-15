@@ -1,0 +1,66 @@
+.amgnoticias-card {
+
+    &__container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        gap: 3.2rem;
+        justify-items: stretch;
+        align-items: stretch;
+        max-width: 102.4rem;
+        margin: auto;
+        padding: 0 1.6rem;
+
+        @media only screen and (min-width: 667px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        @media only screen and (min-width: 896px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__wrap {
+        border-radius: 0.8rem;
+        box-shadow: 0 0.1rem 0.2rem rgba(0,0,0,0.4);
+        color: var(--first-color);
+        overflow: hidden;
+    }
+
+    &__hero-image {
+        background-color: var(--first-color);
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+        overflow: hidden;
+
+        &:hover img {
+            transform: scale(1.1);
+        }
+
+        img {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+
+            transition: transform 0.1s linear;
+        }
+    }
+
+    &__description {
+        background-color: #ffffff;
+        padding: 2.4rem;
+        position: relative;
+    }
+
+    &__title {
+        font-size: 1.2rem;
+    }
+
+    &__subtitle {
+        font-size: 1rem;
+    }
+
+}
