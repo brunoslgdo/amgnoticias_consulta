@@ -1,0 +1,26 @@
+$size: (
+    ss: toRem(6),
+    xs: toRem(8),
+    sm: toRem(16),
+    md: toRem(24),
+    lg: toRem(32),
+    xl: toRem(40),
+);
+
+:root {
+
+    @each $val, $key in $size {
+        --#{$val}: #{$key}
+    }
+}
+
+.wrap {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: toRem(1024);
+}
+
+.grid {
+    display: grid;
+    gap: var(--md);
+}

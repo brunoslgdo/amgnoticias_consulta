@@ -1,0 +1,39 @@
+include ../config/conf_variables
+include ../config/conf_cards
+
+<!DOCTYPE html>
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title AMGNoticias | Consulta
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap")
+        link(rel="stylesheet", href="css/styles.css?=3003020:1832")
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        script(async src="https://www.googletagmanager.com/gtag/js?id=UA-168030542-1")
+        script.
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-168030542-1');
+
+    body
+
+        include ../components/header
+
+        .wrap
+            each item in CARDS
+                h2.title= `AMGNoticias - ${item.year}`
+                .amgnoticias-card__container
+                    each card in item.news
+                        .amgnoticias-card__wrap
+                            .amgnoticias-card__hero-image
+                                img(src=`img/${card.img}`, alt=`amgnoticias ${card.subtitle.toLowerCase()} ${card.title.toLowerCase()}`)
+                            .amgnoticias-card__description
+                                .amgnoticias-card__data
+                                    h3.amgnoticias-card__subtitle= `${card.subtitle}`
+                                    p.amgnoticias-card__title= `${card.title}`
+                                a(href=`${card.href}`, target="_blank", rel="noopener", class="button") Consultar
+
+        include ../components/footer

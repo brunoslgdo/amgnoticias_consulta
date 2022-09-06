@@ -1,15 +1,43 @@
-.title,
-.subtitle {
-    color: var(--first-color-alt);
-    text-shadow: 0 0.1rem rgba(0,0,0,0.2);
+@function toRem($px) {
+    @return ($px / 16) * 1rem;
+}
+
+$font-size: (
+    title: toRem(32),
+    subtitle: toRem(24),
+    body: toRem(15),
+);
+
+:root {
+
+    @each $val, $key in $font-size {
+        --#{$val}: #{$key}
+    }
 }
 
 .title {
-    font-size: 3.2rem;
-    margin: 4rem 0;
+    color: var(--text);
+    font-size: var(--title);
+    margin-top: calc(var(--xl) * 2);
+    margin-bottom: var(--md);
     text-align: center;
+    
+    &:first-child {
+        margin-top: 0;
+    }
 }
 
 .subtitle {
-    font-size: 2rem;
+    color: var(--text-alt);
+    font-weight: normal;
+    margin-bottom: toRem(24);
+}
+
+.amgnoticias {
+    color: var(--text-alt);
+    font-size: var(--subtitle);
+
+    span {
+        font-weight: 200;
+    }
 }
